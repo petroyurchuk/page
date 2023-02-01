@@ -146,6 +146,7 @@ body {
   width: 280px;
   background-color: #2c71b8;
   color: #fff;
+  border: none;
 }
 
 .menu li>ul li a:hover {
@@ -155,6 +156,7 @@ body {
 
 .menu li:hover>ul {
   display: block;
+  z-index: 1;
 }
 
 .search {
@@ -220,206 +222,225 @@ input::placeholder {
   font-size: 12px;
 }
 
-.aside {
-  height: 840px;
-  background-color: rgba(255, 255, 255, 0.2);
+.breadcrumbs {
+  padding-top: 20px;
 }
 
-.headOfMain {
-  height: 120px;
-  /* padding-top: 40px; */
-}
-
-.menuOfMain {
+.breadcrumbs .menu-of-breadcrumbs {
   display: flex;
-  margin-top: 20px;
+
 }
 
-.menuOfMain li {
-  margin-right: 8px;
-}
-
-.menuOfMain li a {
+.menu-of-breadcrumbs li a {
   text-decoration: none;
   color: #acc1dd;
-  font-size: 21px;
+  font-size: 14px;
 }
 
+.menu-of-breadcrumbs li:first-child::after,
+.menu-of-breadcrumbs li:nth-child(2)::after {
+  content: ">";
+  padding: 0 10px;
+  color: #acc1dd;
+}
 
-.menuOfMain li:last-child>a {
+.menu-of-breadcrumbs li:last-child>a {
   text-decoration: underline;
 }
 
-.sort {
-  display: flex;
-}
-
-h1 {
-  font-size: 48px;
+.title-of-main {
   color: #fff;
+  font-size: 48px;
   font-weight: bold;
+  padding-top: 30px;
 }
 
-
-
-.sortMenu li {
-  position: relative;
+.select {
+  padding-top: 22px;
 }
 
-.sortMenu li>ul {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  display: none;
-}
-
-.sortMenu a {
+.select .sort-menu {
   display: flex;
+}
+
+.sort-menu li {
+  position: relative;
+  transition: all .5s;
+}
+
+.sort-menu li a {
+  display: inline-block;
   width: 270px;
   height: 40px;
-  background-color: #2c71b8;
-  color: #fff;
-  text-decoration: none;
-  align-items: center;
   border: 1px solid #fff;
-  padding-left: 18px;
-  justify-content: space-between;
+  background-color: #2c71b8;
+  text-decoration: none;
+  padding: 12px 0 12px 20px;
+  color: #fff;
+  transition: all .3s;
 }
 
-.sortMenu a:hover {
-  background-color: #fff;
+.sort-menu li a:hover {
+  background: #fff;
   color: #2c71b8;
 }
 
-.sortMenu li>ul li a {
-  background-color: #2c71b8;
-  color: #fff;
+.sort-menu li>ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
 }
 
-.sortMenu li:hover>ul {
+.sort-menu li:hover>ul {
   display: block;
+  z-index: 1;
 }
 
-.sortMenu a>svg {
-  margin: 15px 13px 15px 0;
+.angle-small-down {
+  background-image: url("../images/angle-small-down.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 14px;
+  top: 10px;
 }
 
-.h-1 {
-  margin-right: 130px;
-  margin-top: 10px;
-}
 
-.containerForSortMenu {
-  margin-top: 20px;
-}
 
-.wrapper {
-  border: 1px solid #fff;
-  height: 650px;
+.product {
   width: 270px;
+  height: 650px;
+  border: 1px solid #fff;
+  margin-top: 50px;
 }
 
-.blockForBg {
+.product-img {
+  width: 100%;
   height: 180px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.wrapperForImg {
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 180px;
+  align-items: center;
+  position: relative;
 }
 
-.wrapperForBtns {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  /* height: 180px; */
+.zoom,
+.like {
+  border: 1px solid #2c71b8;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
-.wrapperForBtns>a {
-  margin: 10px 10px 10px 0px;
+.zoom {
+  right: 10px;
+  top: 10px;
+  background-image: url("../images/blue_rectangle.png");
 }
 
-.blockForTextContent {
+.like {
+  right: 10px;
+  top: 50px;
+  background-image: url("../images/blue_like.png");
+}
+
+.zoom:hover,
+.like:hover {
+  background-color: #2c71b8;
+}
+
+.zoom:hover {
+  background-image: url("../images/rectangle.png")
+}
+
+.like:hover {
+  background-image: url("../images/like.png")
+}
+
+.product-title {
+  padding-top: 15px;
+}
+
+.product-title h2 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-description {
+  padding-top: 15px;
+  color: #fff;
+  font-size: 21px;
+  padding-right: 50px;
+  padding-left: 10px;
+}
+
+.product-features {
+  font-size: 21px;
   color: #fff;
   padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 20px;
+  padding-left: 10px;
 }
 
-.blockForTextContent>h2 {
-  font-size: 30px;
+.product-features span {
   font-weight: bold;
-  text-align: center;
-}
-
-.blockForTextContent>p {
-  font-size: 21px;
-  margin-top: 20px;
-}
-
-.blockForTextContent>p:first-child {
-  text-align: center;
-}
-
-.blockForTextContent>p>b {
-  font-weight: bold;
-}
-
-.price {
-  margin: 30px 0;
-}
-
-.blockForBtns {
-  height: 120px;
-  margin: auto;
-  width: 210px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.details,
-.Add {
-  width: 100%;
-  height: 50px;
-  font-size: 21px;
-  color: #fff;
-  border: 1px solid #fff;
-  font-weight: bold;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
-.details {
-  background-color: #2c71b8;
+.product-price {
+  padding-top: 25px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
 }
 
-.Add {
+.btn {
+  text-transform: uppercase;
+  background-color: #2c71b8;
+  border: 1px solid #fff;
+  width: 210px;
+  height: 50px;
+  margin: 0 30px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 21px;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.btn-more-details {
+  margin-top: 25px;
+}
+
+.btn-add-to-cart {
+  margin-top: 15px;
+  position: relative;
+}
+
+.btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.containerForMarginTop {
-  margin-top: 30px;
+.shop-for-btn {
+  position: absolute;
+  background-image: url("../images/shop_white.png");
+  right: 7px;
+  bottom: 15px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.bgForImg {
-  height: 30px;
-  width: 30px;
-  background-color: #2c71b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.border {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #2c71b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.aside {
+  height: 840px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
