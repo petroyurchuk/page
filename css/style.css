@@ -308,12 +308,15 @@ input::placeholder {
 }
 
 
+.container-row {
+  margin-bottom: 50px;
+}
 
 .product {
   width: 270px;
   height: 650px;
   border: 1px solid #fff;
-  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .product-img {
