@@ -56,7 +56,7 @@
           <div class="row">
             <div class="col-9">
               <div class="search">
-                <input type="text" placeholder="search">
+                <input type="text" class="input-search" placeholder="search">
                 <button class="searchBtn">
                   <img src="./images/search.png" alt="search">
                 </button>
@@ -64,9 +64,7 @@
             </div>
             <div class="col-3">
               <div class="shop">
-                <button class="shopBtn">
-                  <img src="./images/shop.png" alt="shop">
-                </button>
+                <div class="shopBtn" id="products-count">0</div>
               </div>
             </div>
           </div>
@@ -79,7 +77,75 @@
       <div class="row">
         <div class="col-3">
           <aside class="aside">
-
+            <div class="aside-container">
+              <div class="aside-wrapper">
+                <div class="aside-wrapper-for-items">
+                  <h3 class="aside-title-of-item">Device Type</h3>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="laptop"> <label class="name-of-item"
+                      for="laptop">Laptop</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="tablet"> <label class="name-of-item"
+                      for="tablet">Tablet</label>
+                  </div>
+                </div>
+                <div class="aside-wrapper-for-items">
+                  <h3 class="aside-title-of-item">color</h3>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="black"> <label class="name-of-item"
+                      for="black">Black</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="red"> <label class="name-of-item"
+                      for="red">red</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="green"> <label class="name-of-item"
+                      for="green">green</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="blue"> <label class="name-of-item"
+                      for="blue">blue</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="orange"> <label class="name-of-item"
+                      for="orange">orange</label>
+                  </div>
+                </div>
+                <div class="aside-wrapper-for-items">
+                  <h3 class="aside-title-of-item">ram</h3>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="one-gb"> <label class="name-of-item"
+                      for="one-gb">1GB</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="two-gb"> <label class="name-of-item"
+                      for="two-gb">2GB</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="four-gb"> <label class="name-of-item"
+                      for="four-gb">4GB</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="six-gb"> <label class="name-of-item"
+                      for="six-gb">6GB</label>
+                  </div>
+                  <div class="aside-item">
+                    <input class="input-checkbox" type="checkbox" id="eight-gb"> <label class="name-of-item"
+                      for="eight-gb">8GB</label>
+                  </div>
+                </div>
+              </div>
+              <div class="aside-wrapper-for-link">
+                <a href="/" class="aside-link-show-more">
+                  Show more options...
+                </a>
+              </div>
+              <div class="aside-wrapper-for-button">
+                <button class="aside-btn-submit">Submit</button>
+              </div>
+            </div>
           </aside>
         </div>
         <div class="col-9">
@@ -402,9 +468,25 @@
         </div>
       </div>
     </div>
-
   </main>
-
+  <div class="modal-none">
+    <div class="modal-block">
+      <form>
+        <div class="btn-wrap">
+          <div class="btn-close">X</div>
+        </div>
+        <h3>Please call for more details</h3>
+        <div class="form-filed">
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-filed">
+          <input type="email" placeholder="Your email" required>
+        </div>
+        <button class="btn-send">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
