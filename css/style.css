@@ -617,3 +617,42 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   letter-spacing: 2px;
 }
+
+.slider {
+  height: 400px;
+  background: rgba(35, 90, 147, 0.2);
+  border-bottom: 1px solid #fff;
+}
+
+.slider-block>div {
+  text-align: center;
+  font-size: 50px;
+  padding: 150px 0;
+  color: #fff;
+}
+
+.slick-dots li button:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.slick-next:before {
+  content: url("../images/slick-next.png");
+}
+
+.slick-prev:before {
+  content: url("../images/slick-prew.png");
+}
