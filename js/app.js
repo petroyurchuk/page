@@ -85,44 +85,40 @@ const decrementBtns = document.querySelectorAll(".decrement-button");
 const incrementBtns = document.querySelectorAll(".increment-button");
 const productsInput = document.querySelectorAll(".product-quantity input");
 
-function Counter(incrementBtn, decrementBtn, inputField, index) {
-  this.domRefs = {
-    incrementBtn: incrementBtn[index],
-    decrementBtn: decrementBtn[index],
-    inputField: inputField[index],
-  };
-  this.toggleButtonState = function () {
-    let count = this.domRefs.inputField.value;
-    this.domRefs.decrementBtn.disabled = count <= 1;
-    this.domRefs.incrementBtn.disabled = count >= 10;
-  };
-  this.toggleButtonState();
-  this.increment = function () {
-    this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+class Counter {
+  constructor(incrementBtn, decrementBtn, inputField) {
+    this.domRefs = {
+      incrementBtn: incrementBtn,
+      decrementBtn: decrementBtn,
+      inputField: inputField,
+    };
+    this.toggleButtonState = function () {
+      let count = this.domRefs.inputField.value;
+      this.domRefs.decrementBtn.disabled = count <= 1;
+      this.domRefs.incrementBtn.disabled = count >= 10;
+    };
     this.toggleButtonState();
-  };
-  this.decrement = function () {
-    this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
-    this.toggleButtonState();
-  };
-  this.domRefs.incrementBtn.addEventListener(
-    "click",
-    this.increment.bind(this)
-  );
-  this.domRefs.decrementBtn.addEventListener(
-    "click",
-    this.decrement.bind(this)
-  );
+    this.increment = function () {
+      this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+      this.toggleButtonState();
+    };
+    this.decrement = function () {
+      this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+      this.toggleButtonState();
+    };
+    this.domRefs.incrementBtn.addEventListener(
+      "click",
+      this.increment.bind(this)
+    );
+    this.domRefs.decrementBtn.addEventListener(
+      "click",
+      this.decrement.bind(this)
+    );
+  }
 }
 
-const counter1 = new Counter(incrementBtns, decrementBtns, productsInput, 0);
-const counter2 = new Counter(incrementBtns, decrementBtns, productsInput, 1);
-const counter3 = new Counter(incrementBtns, decrementBtns, productsInput, 2);
-const counter4 = new Counter(incrementBtns, decrementBtns, productsInput, 3);
-const counter5 = new Counter(incrementBtns, decrementBtns, productsInput, 4);
-const counter6 = new Counter(incrementBtns, decrementBtns, productsInput, 5);
-const counter7 = new Counter(incrementBtns, decrementBtns, productsInput, 6);
-const counter8 = new Counter(incrementBtns, decrementBtns, productsInput, 7);
-const counter9 = new Counter(incrementBtns, decrementBtns, productsInput, 8);
+const counters = [];
 
-console.log(counter1);
+productsInput.forEach((item, i) => {
+  counters[i] = new Counter(incrementBtns[i], decrementBtns[i], item);
+});
